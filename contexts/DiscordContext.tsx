@@ -76,12 +76,12 @@ export const DiscordContextProvider: any = ({
       if (server) {
         const categories = new Set(
           channels
-            .filter((channel) => {
-              return channel.data?.data?.server === server.name;
-            })
-            .map((channel) => {
-              return channel.data?.data?.category;
-            })
+  .filter((channel) => {
+    return (channel.data as any)?.data?.server === server.name;
+  })
+  .map((channel) => {
+    return (channel.data as any)?.data?.category;
+  })
         );
 
         for (const category of Array.from(categories)) {
