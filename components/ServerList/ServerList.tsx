@@ -21,8 +21,8 @@ const ServerList = () => {
       channels
         .map((channel: Channel) => {
           return {
-            name: (channel.data?.data?.server as string) ?? 'Unknown',
-            image: channel.data?.data?.image,
+            name: ((channel.data as any)?.data?.server as string) ?? 'Unknown',
+            image: (channel.data as any)?.data?.image,
           };
         })
         .filter((server: DiscordServer) => server.name !== 'Unknown')
